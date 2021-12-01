@@ -68,7 +68,7 @@ ol, ul {
 }
 
 .button:disabled {
-  opacity: 0.;
+  opacity: 0.5;
 }
 
 .puzzle .square:hover {

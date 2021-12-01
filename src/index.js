@@ -114,8 +114,6 @@ class SudokuSolver extends React.Component {
       bgColors: bgColors,
       valid: valid
     });
-
-    console.log("Valid: " + this.state.valid)
   }
   
   checkRowValid(r) {
