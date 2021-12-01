@@ -8,7 +8,7 @@ class SudokuSolver extends React.Component {
   constructor(props) {
     super(props);
     const n = 9
-    this.invalidColor = "#FF7F7F";
+    this.invalidColor = "#ff7fe5";
 
     this.state = {
       grid: Array(n).fill(null).map(() => new Array(n).fill(null)),
@@ -114,6 +114,8 @@ class SudokuSolver extends React.Component {
       bgColors: bgColors,
       valid: valid
     });
+
+    console.log("Valid: " + this.state.valid)
   }
   
   checkRowValid(r) {
@@ -188,6 +190,19 @@ class SudokuSolver extends React.Component {
     }
   }
 
+  reset() {
+    const n = 9
+    this.setState({
+      grid: Array(n).fill(null).map(() => new Array(n).fill(null)),
+      solutionGrid: Array(n).fill(null).map(() => new Array(n).fill(null)),
+      bgColors: Array(n).fill("").map(() => new Array(n).fill("")),
+      invalidRows: Array(n).fill(false),
+      invalidCols: Array(n).fill(false),
+      invalidSubgrids: Array(n / 3).fill(false).map(() => new Array(false).fill(null)),
+      valid: true
+    })
+  }
+
   solve() {
     if (this.state.valid === true) {
       const solutionGenerator = new SolutionGenerator(this.state.grid);
@@ -201,7 +216,7 @@ class SudokuSolver extends React.Component {
   }
 
   render() {
-    const solutionBgColors = new Array(9).fill("white").map(() => new Array(9).fill("white"));
+    const solutionBgColors = new Array(9).fill("").map(() => new Array(9).fill(""));
     return (
       <div className="solver">
         <div className="game">
@@ -224,7 +239,8 @@ class SudokuSolver extends React.Component {
               />
             </div>
           </div>
-          <button onClick={() => this.solve()}>Solve</button>
+          <button className="button" onClick={() => this.solve()} disabled={!this.state.valid}>Solve</button>
+          <button className="button" onClick={() => this.reset()}>Reset</button>
         </div>
 
       </div>
