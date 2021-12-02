@@ -48,10 +48,6 @@ ol, ul {
   background-color: #9ebaca;
 }
 
-.square:focus {
-  outline: none;
-}
-
 .button {
   margin: 5px;
   color: white;
@@ -81,8 +77,8 @@ ol, ul {
   background-color: #4095C7;
 }
 
-.kbd-navigation .square:focus {
-  background: #ddd;
+.puzzle .square:active {
+  background-color: #2b76a1;
 }
 
 .solver {

@@ -43,7 +43,6 @@ class SudokuSolver extends React.Component {
   }
 
   handleRightClick(r,c) {
-    
     const grid = this.state.grid
     
     // Set to 1 if square blank
@@ -243,7 +242,7 @@ class SudokuSolver extends React.Component {
           <h1>Sudoku Solver</h1>
           <div className="game-board">
             <div className="puzzle" onContextMenu={(e) => e.preventDefault()}>
-              <h2>Enter sudoku puzzle:</h2>
+              <h2>Puzzle</h2>
               <Board
                 grid={this.state.grid}
                 bgColors={this.state.bgColors}
