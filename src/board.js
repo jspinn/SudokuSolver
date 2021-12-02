@@ -7,7 +7,7 @@ function Square(props) {
     borderRightWidth: props.rightBorder
   }
   return (
-    <button className="square" onClick={() => props.onClick()} style={style}>
+    <button className="square" onClick={() => props.onClick()} onContextMenu={() => props.onContextMenu()} style={style}>
       { props.value }
     </button>
   );
@@ -20,6 +20,7 @@ class Board extends React.Component {
       value={this.props.grid[r][c]}
       bgColor={this.props.bgColors[r][c]}
       onClick={() => this.props.onClick(r, c)}
+      onContextMenu={() => this.props.onContextMenu(r, c)}
       rightBorder={rightBorder}
       bottomBorder={bottomBorder}
       />

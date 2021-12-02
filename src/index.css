@@ -29,7 +29,8 @@ ol, ul {
 
 .square {
   background: #bedef0;
-  border: 2px solid #273D47;
+  border: 2px solid #092431;
+  color: #092431;
   float: left;
   font-size: 24px;
   font-weight: bold;
@@ -41,6 +42,10 @@ ol, ul {
   text-align: center;
   width: 40px;
   transition: 0.3s;
+}
+
+.solution .square {
+  background-color: #9ebaca;
 }
 
 .square:focus {
@@ -68,6 +73,7 @@ ol, ul {
 }
 
 .button:disabled {
+  background-color: #ff7fe5;
   opacity: 0.5;
 }
 

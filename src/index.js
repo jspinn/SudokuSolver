@@ -42,6 +42,28 @@ class SudokuSolver extends React.Component {
     this.checkEntryValidity(r,c);
   }
 
+  handleRightClick(r,c) {
+    
+    const grid = this.state.grid
+    
+    // Set to 1 if square blank
+    if (grid[r][c] == null) {
+      grid[r][c] = 9
+    // Set back to blank if square already 9
+    } else if (grid[r][c] === 1) {
+      grid[r][c] = null
+    // Increment digit otherwise
+    } else {
+      grid[r][c] = grid[r][c] - 1
+    }
+
+    this.setState({
+      grid: grid,
+    });
+
+    this.checkEntryValidity(r,c);
+  }
+
   checkEntryValidity(r,c) {
     // Check if valid along row
     const invalidRows = this.state.invalidRows;
@@ -220,12 +242,13 @@ class SudokuSolver extends React.Component {
         <div className="game">
           <h1>Sudoku Solver</h1>
           <div className="game-board">
-            <div className="puzzle">
+            <div className="puzzle" onContextMenu={(e) => e.preventDefault()}>
               <h2>Enter sudoku puzzle:</h2>
               <Board
                 grid={this.state.grid}
                 bgColors={this.state.bgColors}
                 onClick={(r,c) => this.handleClick(r,c)}
+                onContextMenu={(r,c) => this.handleRightClick(r,c)}
               />
             </div>
             <div className="solution">
