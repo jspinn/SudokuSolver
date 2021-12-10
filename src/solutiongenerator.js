@@ -15,9 +15,13 @@ export default class SolutionGenerator {
     this.backtrack(0, 0);
 
     var endTime = performance.now();
-    console.log(`Algorithm execution: ${(endTime - startTime).toFixed(2)} ms`);
+    var executionTime = endTime - startTime
+    console.log(`Algorithm execution: ${executionTime} ms`);
     
-    return this.puzzle;
+    return {
+      solution: this.puzzle,
+      executionTime: executionTime
+    };
   }
 
   backtrack(r, c) {

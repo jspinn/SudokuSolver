@@ -218,16 +218,31 @@ class SudokuSolver extends React.Component {
       invalidRows: Array(n).fill(false),
       invalidCols: Array(n).fill(false),
       invalidSubgrids: Array(n / 3).fill(false).map(() => new Array(false).fill(null)),
-      valid: true
+      valid: true,
+      info: ""
     })
   }
 
   solve() {
     if (this.state.valid === true) {
+      this.setState({
+        info: "Solving..."
+      });
+
       const solutionGenerator = new SolutionGenerator(this.state.grid);
       const solution = solutionGenerator.generateSolution();
+      var executionTime = solution.executionTime
+
+      var infoMessage = "Solved in "
+      if (executionTime > 1000) {
+        infoMessage += (executionTime / 1000).toFixed(2) + " s"
+      } else {
+        infoMessage += executionTime.toFixed(2) + " ms"
+      }
+
       this.setState({
-        solutionGrid: solution,
+        solutionGrid: solution.solution,
+        info: infoMessage
       });
     } else {
       console.log("Unable to solve. Invalid puzzle.");
@@ -261,6 +276,7 @@ class SudokuSolver extends React.Component {
           </div>
           <button className="button" onClick={() => this.solve()} disabled={!this.state.valid}>Solve</button>
           <button className="button" onClick={() => this.reset()}>Reset</button>
+          <h2>{this.state.info}</h2>
         </div>
 
       </div>
