@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/SudokuSolver/static/css/main.f95242b7.chunk.css",
+    "main.js": "/SudokuSolver/static/js/main.b7127d10.chunk.js",
+    "main.js.map": "/SudokuSolver/static/js/main.b7127d10.chunk.js.map",
+    "runtime-main.js": "/SudokuSolver/static/js/runtime-main.d6ec9cf7.js",
+    "runtime-main.js.map": "/SudokuSolver/static/js/runtime-main.d6ec9cf7.js.map",
+    "static/js/2.1d9ebfc0.chunk.js": "/SudokuSolver/static/js/2.1d9ebfc0.chunk.js",
+    "static/js/2.1d9ebfc0.chunk.js.map": "/SudokuSolver/static/js/2.1d9ebfc0.chunk.js.map",
+    "index.html": "/SudokuSolver/index.html",
+    "static/css/main.f95242b7.chunk.css.map": "/SudokuSolver/static/css/main.f95242b7.chunk.css.map",
+    "static/js/2.1d9ebfc0.chunk.js.LICENSE.txt": "/SudokuSolver/static/js/2.1d9ebfc0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d6ec9cf7.js",
+    "static/js/2.1d9ebfc0.chunk.js",
+    "static/css/main.f95242b7.chunk.css",
+    "static/js/main.b7127d10.chunk.js"
+  ]
+}
